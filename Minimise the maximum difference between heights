@@ -1,0 +1,31 @@
+class Solution {
+    int getMinDiff(int[] arr, int k) {
+      
+         Arrays.sort(arr);
+         int l=arr.length;
+         
+         int diff=arr[l-1]-arr[0];
+         
+         int cmax;
+         int cmin;
+         
+         
+         
+         for(int i=1;i<l;i++){
+             
+         if(arr[i]-k<0) continue;
+
+
+            cmax=Math.max(arr[i-1]+k,arr[l-1]-k);
+             cmin=Math.min(arr[i]-k,arr[0]+k);
+             
+             
+             diff=Math.min(diff,cmax-cmin);
+
+             }
+             
+         
+         
+        return diff;
+    }
+}
