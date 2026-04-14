@@ -1,0 +1,53 @@
+class Solution {
+    public int findDuplicate(int[] nums) {
+   Set<Integer> set = new HashSet<>();
+        int len = nums.length;
+        for (int i = 0; i < len; i++) {
+            if (!set.add(nums[i])) {
+                return nums[i];
+            }
+        }
+
+        return len;
+    }
+}
+
+#Another way
+
+class Solution {
+    public int findDuplicate(int[] nums) {
+ HashSet<Integer> seen = new HashSet<>();
+
+        for (int num : nums) {
+            if (seen.contains(num)) {
+                return num; // Found duplicate
+            }
+            seen.add(num);
+        }
+
+        return -1;
+    }
+}
+
+#Another way but less efficient 
+
+class Solution {
+    public int findDuplicate(int[] nums) {
+        int l=nums.length;
+         int dup=0;
+        for(int i=0;i<l;i++){
+            for(int j=i+1;j<l;j++){
+
+            if(nums[i]==nums[j]){
+             dup = nums[i];
+                return dup;
+            }
+
+
+
+            }
+        }
+
+          return dup;
+    }
+}
