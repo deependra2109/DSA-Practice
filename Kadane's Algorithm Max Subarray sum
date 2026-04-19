@@ -1,0 +1,18 @@
+class Solution {
+    int maxSubarraySum(int[] arr) {
+      
+        int maxSum=arr[0];
+        int csum=arr[0];
+        for(int i=1;i<arr.length;i++){
+            if(csum>=0){
+                csum=csum+arr[i];
+            }else{
+                csum=arr[i];
+            }
+            if(maxSum<csum){
+                maxSum=csum;
+            }
+        }
+        return maxSum;
+    }
+}
