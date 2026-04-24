@@ -1,0 +1,65 @@
+
+class Solution {
+    public static ArrayList<ArrayList<Integer>> getPairs(int[] arr) {
+    
+       ArrayList<ArrayList<Integer>> n = new ArrayList<>();
+        
+        Arrays.sort(arr);
+      int s=0,e=arr.length-1;
+
+        
+        while(s<e){
+            
+            if(arr[s]+arr[e]>0){
+                e--;
+            }
+            else if(arr[s]+arr[e]<0){
+                s++;
+            }
+            else {
+                n.add(new ArrayList<>(List.of(arr[s],arr[e])));
+                
+                
+                
+                int cs = arr[s];
+                int ce = arr[e];
+                while(s<e && arr[s]==cs){
+                    s++;
+                }
+                while(s<e && arr[e]==ce){
+                    e--;
+                }
+            }
+            
+         }
+         return n;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
