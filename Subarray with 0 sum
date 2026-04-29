@@ -1,0 +1,30 @@
+class Solution {
+  
+    static boolean findsum(int arr[]) {
+      
+        Set<Integer> s=new HashSet<>();
+        int l=arr.length;
+                    int sum=0;
+
+        
+        for(int i=0;i<l;i++){
+            if(arr[i]==0){
+                return true;
+            }
+        }
+        
+        
+        
+        for(int i=0;i<l;i++){
+            sum+=arr[i];
+            if(sum==0||s.contains(sum)||arr[i]==0){
+                return true;
+            }
+            s.add(sum);
+        }
+
+            
+            
+      return false;  
+    }
+}
