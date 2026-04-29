@@ -1,0 +1,52 @@
+
+
+class Solution {
+    void rearrange(ArrayList<Integer> arr) {
+        
+    
+                ArrayList<Integer>p=new ArrayList<>();
+                ArrayList<Integer>n=new ArrayList<>();
+                
+                
+                int l=arr.size();
+                
+
+              for(int i=0;i<l;i++){
+                  int a=arr.get(i);
+                  
+                  if(a<0){
+                      n.add(a);
+                  }
+                  else{
+                      p.add(a);
+                  }
+              }
+              
+              int i=0,j=0,k=0;
+              
+              int a=p.size();
+              int b=n.size();
+              
+              while(i<a&&j<b){
+                  arr.set(k,p.get(i));
+                  i++;
+                  k++;
+                  arr.set(k,n.get(j));
+                  j++;
+                  k++;
+              }
+              
+              while(i<a){
+                  arr.set(k,p.get(i));
+                  i++;
+                  k++;
+              }
+               while(j<b){
+                  arr.set(k,n.get(j));
+                  j++;
+                  k++;
+              }
+
+        
+    }
+}
